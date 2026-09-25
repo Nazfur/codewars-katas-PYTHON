@@ -5,3 +5,8 @@ Codigo para iniciar en la programación
 Este repo se encargara de subir los katas resueltos en PYTHON para su mejora factorizacion etc
 ---
 
+> Apuntes de gir
+================
+#### Consola
+Recomiendo usar `zsh`
+
