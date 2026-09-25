@@ -10,3 +10,6 @@ Este repo se encargara de subir los katas resueltos en PYTHON para su mejora fac
 #### Consola
 Recomiendo usar `zsh`
 
+### Ramas
+
+`git branch developev`
