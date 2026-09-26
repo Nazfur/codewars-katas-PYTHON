@@ -1,0 +1,57 @@
+def sum_groups(arr) -> int:
+    
+    lista = []
+    resultado = []
+    
+    for numero in arr:
+        if numero % 2 == 0:
+            lista.append(1)
+        else:
+            lista.append(0)
+    
+    
+    #Transformar arr en lista de pares -> 1 o impares -> 0
+    
+    arr = lista
+    lista = []
+    
+    
+    for time in range(0,2):
+        indice = 0
+        for numero in arr:
+            lista.append(numero)
+            if len(arr)-1 != indice:
+                if arr[indice + 1] != numero:
+                    resultado.append(lista)
+                    lista = []
+            else:
+                resultado.append(lista)
+                lista = []
+            indice += 1
+    # Separar pares e imperes consecutivos en lista
+    
+        arr = resultado
+        resultado = []
+        lista = []
+    
+        for conjunto in arr:
+            if 1 in conjunto:
+                resultado.append(1)
+            else:
+                if len(conjunto) % 2 == 0:
+                    resultado.append(1)
+                else:
+                    resultado.append(0)
+    
+        arr = resultado
+        resultado = []
+    
+    
+        # Reeducimos los conjuntos 
+        
+    return len(arr)
+    
+    
+    
+                
+            
