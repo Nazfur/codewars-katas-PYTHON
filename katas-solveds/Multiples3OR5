@@ -1,0 +1,29 @@
+def solution(number):
+    
+    lista = [0]
+    lista2 = [0]
+    
+    contador = 0
+    
+    if number < 3: return 0
+    
+    while contador < (number//3):
+        if lista[-1]+3 < number:
+            lista.append(lista[-1]+3)
+        contador += 1
+    
+    contador = 0
+    
+    while contador < (number//5):
+        if lista2[-1]+5 < number:
+            lista2.append(lista2[-1]+5)
+        contador += 1
+    
+    
+    lista = set(lista)
+    lista2 = set(lista2)
+    
+    print(lista | lista2)
+    
+    return sum(lista | lista2)
+

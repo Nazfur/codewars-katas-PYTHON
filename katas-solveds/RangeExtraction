@@ -1,0 +1,28 @@
+def solution(args):
+    
+    resultado = []
+    cache = [(args[0]-1)]
+    
+    for number in args:
+        if number == cache[-1]+1:
+            cache.append(number)
+        else:
+            resultado.append(cache)
+            cache = [number]
+        
+    if cache: resultado.append(cache)
+    resultado[0] = resultado[0][1:]
+    cache  = []
+    
+    for lista in resultado:
+        if len(lista) > 2:
+            cache.append(f"{lista[0]}-{lista[-1]}")
+        else:
+            if len(lista) < 2:
+                cache.append(str(lista[0]))
+            else:
+                cache.append(str(lista[0]))
+                cache.append(str(lista[1]))
+    
+    
+    return ",".join(cache)
