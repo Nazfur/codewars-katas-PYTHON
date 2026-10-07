@@ -1,0 +1,29 @@
+def count_checkerboard(width, height, resolution):
+    
+    cols = width // resolution
+    rows = height // resolution
+
+    rem_w = width % resolution
+    rem_h = height % resolution
+
+    # Bloques completos
+    result = (cols * rows) // 2 * resolution ** 2
+
+    # Borde derecho
+    if cols % 2 == 1:
+        result += ((rows + 1) // 2) * rem_w * resolution
+    else:
+        result += (rows // 2) * rem_w * resolution
+
+    # Borde inferior
+    if rows % 2 == 1:
+        result += ((cols + 1) // 2) * rem_h * resolution
+    else:
+        result += (cols // 2) * rem_h * resolution
+
+    # Esquina inferior derecha
+    if (cols + rows) % 2 == 1:
+        result += rem_w * rem_h
+
+    return result
+
